@@ -5,7 +5,7 @@ class Point {
     y: number;
 
     draw() {
-        // ...
+        console.log('X: ' + this.x + ', Y: ' + this.y);
     }
 
     getDistance(another: Point){
@@ -13,6 +13,12 @@ class Point {
     }
 } 
 
+// now just like in C# we access fields and methods + intellisense
+// let point: Point = new Point(); // complete line declaration
+let point = new Point(); // shorter declaration - the compiler can infer the type
+point.x = 10;
+point.y = 20;
+point.draw();
 
 
 // -------------
