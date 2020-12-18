@@ -1,19 +1,29 @@
-let count = 5;
-// count = 'a'; // compilation error
-let b;
-b = 1;
-b = true;
-let c: number;
-// c = 'gg'; // compilation error
-let d: number;
-let f: boolean;
-let g: string;
-let h: any;
-let m: number[] = [1, 2, 3];
-let n: any[] = [1, true, 'a', false];
+// type assertion to get intellisense - doesn't change the type at runtime
+let message = "abc";
+let endsWithC = message.endsWith('c');
 
-enum Color{ Red = 0, Green = 1, Blue = 2, Purple = 3 };
-let backgroundColor = Color.Red;
+let message2;
+message2 = 'abc';
+let endsWithC2 = (<string>message).endsWith('c');
+let endsWithC2alternative = (message as string).endsWith('c');
+
+
+// let count = 5;
+// // count = 'a'; // compilation error
+// let b;
+// b = 1;
+// b = true;
+// let c: number;
+// // c = 'gg'; // compilation error
+// let d: number;
+// let f: boolean;
+// let g: string;
+// let h: any;
+// let m: number[] = [1, 2, 3];
+// let n: any[] = [1, true, 'a', false];
+
+// enum Color{ Red = 0, Green = 1, Blue = 2, Purple = 3 };
+// let backgroundColor = Color.Red;
 
 
 
