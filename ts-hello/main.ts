@@ -1,35 +1,54 @@
-let drawPoint = (x, y) => {
-    // ...
-}
-// instead of passing x, y, we can pass a point object 
-// to use especially when too many parameters are being passed
+// cohesion - properties and methods inside the same unit (class)
 
-let drawPoint2 = (point) => {
-    // ... draw with x and y
-}
+class Point {
+    x: number;
+    y: number;
 
-drawPoint2({
-    x: 1,
-    y: 1
-});
-// problem - no compile error/indicator
-drawPoint2({
-    name: 'Mosh'
-})
+    draw() {
+        // ...
+    }
 
-// solution - inline annotation
-let drawPoint3 = (point: { x: number, y: number }) => {
-    // ... draw with x and y
-}
+    getDistance(another: Point){
+        // ...
+    }
+} 
 
-// better solution - interfaces
-interface Point {
-    x: number,
-    y: number
-}
-let drawPoint4 = (point: Point) => {
-    // ... draw with x and y
-}
+
+
+// -------------
+
+// let drawPoint = (x, y) => {
+//     // ...
+// }
+// // instead of passing x, y, we can pass a point object 
+// // to use especially when too many parameters are being passed
+
+// let drawPoint2 = (point) => {
+//     // ... draw with x and y
+// }
+
+// drawPoint2({
+//     x: 1,
+//     y: 1
+// });
+// // problem - no compile error/indicator
+// drawPoint2({
+//     name: 'Mosh'
+// })
+
+// // solution - inline annotation
+// let drawPoint3 = (point: { x: number, y: number }) => {
+//     // ... draw with x and y
+// }
+
+// // better solution - interfaces
+// interface Point {
+//     x: number,
+//     y: number
+// }
+// let drawPoint4 = (point: Point) => {
+//     // ... draw with x and y
+// }
 
 // ----------------------
 
