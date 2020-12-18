@@ -1,11 +1,29 @@
-// type assertion to get intellisense - doesn't change the type at runtime
-let message = "abc";
-let endsWithC = message.endsWith('c');
+// arrow functions
+// js
+let log = function(message) {
+    console.log(message);
+}
 
-let message2;
-message2 = 'abc';
-let endsWithC2 = (<string>message).endsWith('c');
-let endsWithC2alternative = (message as string).endsWith('c');
+// ts
+let doLog = (message) => {
+    console.log(message);
+}
+
+// ts if only one line
+let doLog2 = (message) => console.log(message);
+// event the () surrounding message can be taken out but then = less readable
+// no params is just ()
+
+// -----------------------
+
+// // type assertion to get intellisense - doesn't change the type at runtime
+// let message = "abc";
+// let endsWithC = message.endsWith('c');
+
+// let message2;
+// message2 = 'abc';
+// let endsWithC2 = (<string>message).endsWith('c');
+// let endsWithC2alternative = (message as string).endsWith('c');
 
 
 // let count = 5;
