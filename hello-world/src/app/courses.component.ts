@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoursesService } from './courses.service';
 
 @Component({
     selector: 'courses', // <courses>
@@ -14,8 +15,27 @@ import { Component } from '@angular/core';
 })
 export class CoursesComponent {
     title = "List of courses";
-    courses = ["course 1", "course 2", "course 3"];
+    courses: any;
+
+    constructor (service: CoursesService){
+        // let service = new CoursesService(); // usinng DI instead
+        // Angular has built in DI
+        // must register the CoursesService class in app.module.ts Providers
+        this.courses = service.getCourses();
+    }
+
     getTitle(){
         return this.title;
     }
+
+    // Logic for calling a HTTP service - tightly couple
+    // the component to the endpoint - hard for tests
+    // or in another place, the this logic has to be repeated
+    // or - a component should not include logic other than presentation logic
+    // details should be delegated n other places - SERVICES
+    // courses.service.ts
+
+    
+
+
 }
