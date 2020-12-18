@@ -1,18 +1,53 @@
-// arrow functions
-// js
-let log = function(message) {
-    console.log(message);
+let drawPoint = (x, y) => {
+    // ...
+}
+// instead of passing x, y, we can pass a point object 
+// to use especially when too many parameters are being passed
+
+let drawPoint2 = (point) => {
+    // ... draw with x and y
 }
 
-// ts
-let doLog = (message) => {
-    console.log(message);
+drawPoint2({
+    x: 1,
+    y: 1
+});
+// problem - no compile error/indicator
+drawPoint2({
+    name: 'Mosh'
+})
+
+// solution - inline annotation
+let drawPoint3 = (point: { x: number, y: number }) => {
+    // ... draw with x and y
 }
 
-// ts if only one line
-let doLog2 = (message) => console.log(message);
-// event the () surrounding message can be taken out but then = less readable
-// no params is just ()
+// better solution - interfaces
+interface Point {
+    x: number,
+    y: number
+}
+let drawPoint4 = (point: Point) => {
+    // ... draw with x and y
+}
+
+// ----------------------
+
+// // arrow functions
+// // js
+// let log = function(message) {
+//     console.log(message);
+// }
+
+// // ts
+// let doLog = (message) => {
+//     console.log(message);
+// }
+
+// // ts if only one line
+// let doLog2 = (message) => console.log(message);
+// // event the () surrounding message can be taken out but then = less readable
+// // no params is just ()
 
 // -----------------------
 
