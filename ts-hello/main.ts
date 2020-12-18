@@ -1,62 +1,71 @@
-// Access modifiers - public(default), private, protected
+import { Point } from "./point";
 
-class Point {
-    // private x: number;
-    // private y: number;
-    // private weight: number;
-
-    // constructor(x?: number, y?: number){
-    //     this.x = x;
-    //     this.y = y;
-    //     this.weight = 5;
-    // }
-
-    // a shorter way to write the constructor an be
-    constructor(private _x?: number, private _y?: number, private _weight: number = 5){};
-
-    draw() {
-        console.log('X: ' + this._x + ', Y: ' + this._y);
-    }
-
-    getDistance(another: Point){
-        // ...
-    }
-
-    getX() {
-        return this._x;
-    };
-
-    // property
-    get x() {
-        return this._x;
-    };
-
-    setX(value) {
-        if (value < 0)
-            throw new Error('Value cannot be less than 0.');
-
-        this._x = value;
-    }
-
-    // property
-    set x(value) {
-        if (value < 0)
-            throw new Error('Value cannot be less than 0.');
-
-        this._x = value;
-    }
-} 
-
-let point = new Point(1, 2); // shorter declaration - the compiler can infer the type
-//point.x = 10;
-//point.y = 20;
-// point.weight = 30;  // compilation error
+let point = new Point(1, 2);
 point.draw();
-let x = point.getX();
-point.setX(10);
-// ---- props ---
-let gg = point.x; // from get X
-point.x = 10; // from set X
+
+
+// ----------
+
+
+// // Access modifiers - public(default), private, protected
+
+// class Point {
+//     // private x: number;
+//     // private y: number;
+//     // private weight: number;
+
+//     // constructor(x?: number, y?: number){
+//     //     this.x = x;
+//     //     this.y = y;
+//     //     this.weight = 5;
+//     // }
+
+//     // a shorter way to write the constructor an be
+//     constructor(private _x?: number, private _y?: number, private _weight: number = 5){};
+
+//     draw() {
+//         console.log('X: ' + this._x + ', Y: ' + this._y);
+//     }
+
+//     getDistance(another: Point){
+//         // ...
+//     }
+
+//     getX() {
+//         return this._x;
+//     };
+
+//     // property
+//     get x() {
+//         return this._x;
+//     };
+
+//     setX(value) {
+//         if (value < 0)
+//             throw new Error('Value cannot be less than 0.');
+
+//         this._x = value;
+//     }
+
+//     // property
+//     set x(value) {
+//         if (value < 0)
+//             throw new Error('Value cannot be less than 0.');
+
+//         this._x = value;
+//     }
+// } 
+
+// let point = new Point(1, 2); // shorter declaration - the compiler can infer the type
+// //point.x = 10;
+// //point.y = 20;
+// // point.weight = 30;  // compilation error
+// point.draw();
+// let x = point.getX();
+// point.setX(10);
+// // ---- props ---
+// let gg = point.x; // from get X
+// point.x = 10; // from set X
 
 // ----------
 
