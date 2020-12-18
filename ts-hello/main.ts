@@ -4,6 +4,13 @@ class Point {
     x: number;
     y: number;
 
+    // typescript can only have 1 constructor
+    // so if you want to have a parameterless ctor - use optional params
+    constructor(x?: number, y?: number){
+        this.x = x;
+        this.y = y;
+    }
+
     draw() {
         console.log('X: ' + this.x + ', Y: ' + this.y);
     }
@@ -15,7 +22,7 @@ class Point {
 
 // now just like in C# we access fields and methods + intellisense
 // let point: Point = new Point(); // complete line declaration
-let point = new Point(); // shorter declaration - the compiler can infer the type
+let point = new Point(1, 2); // shorter declaration - the compiler can infer the type
 point.x = 10;
 point.y = 20;
 point.draw();
