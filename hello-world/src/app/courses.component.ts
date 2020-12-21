@@ -30,9 +30,9 @@ export class CoursesComponent {
 
     // Logic for calling a HTTP service - tightly couple
     // the component to the endpoint - hard for tests
-    // or in another place, the this logic has to be repeated
+    // or in another place, this logic has to be repeated
     // or - a component should not include logic other than presentation logic
-    // details should be delegated n other places - SERVICES
+    // details should be delegated in other places - SERVICES
     // courses.service.ts
 
     
